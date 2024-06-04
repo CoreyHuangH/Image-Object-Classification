@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import torchvision
 import gradio as gr
-from PIL import Image
+# from PIL import Image
 
 # Define and load my resnet50 model
 model = torchvision.models.resnet50()
