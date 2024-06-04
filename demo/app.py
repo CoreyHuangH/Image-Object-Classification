@@ -2,7 +2,6 @@ import torch
 from torch import nn
 import torchvision
 import gradio as gr
-# from PIL import Image
 
 # Define and load my resnet50 model
 model = torchvision.models.resnet50()
@@ -22,6 +21,7 @@ model.eval()
 # Define the labels
 labels = ["bird", "cat", "dog", "horse", "sheep"]
 
+
 # Define the predict function
 def predict(inp):
     inp = torchvision.transforms.ToTensor()(inp).unsqueeze(0)
@@ -31,10 +31,6 @@ def predict(inp):
         prediction = labels[prediction.argmax()]
     return prediction
 
-# # Test the predict function
-# image = Image.open("demo/input_imgs/cat.jpeg")
-# prediction = predict(image)
-# print(prediction)
 
 # Define the gradio interface
 demo = gr.Interface(
