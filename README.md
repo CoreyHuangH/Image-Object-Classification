@@ -4,7 +4,7 @@ My Intern Project 1 @USTC: Image object classification
 ## Requirement:
 **Dataset**
 - COCO [https://cocodataset.org/#explore], the images are labeled. Prepare a dataset by picking 5
-kinds of images, and each kind contains a few hundred images. Split the dataset into 3 batches:
+kinds of images (bird, cat, dog, horse and sheep were chosen in this project), and each kind contains a few hundred images. Split the dataset into 3 batches:
 training set, validation set, and test set.
 
 **Tool**
