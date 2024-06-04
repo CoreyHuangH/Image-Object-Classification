@@ -2,7 +2,7 @@ pillow==10.3.0
 pycocotools==2.0.7
 scikit-learn==1.4.2
 tensorboard==2.16.2
-tensorboard-data-server==0.7.2
 torch==2.3.0
 torch-tb-profiler==0.4.3
 torchvision==0.18.0
+gradio==4.32.2
