@@ -21,6 +21,3 @@ training set, validation set, and test set.
 **Machine**
 Start with CPU on local laptop with small dataset. If it works well, try to switch GPU server
 (CUDA)
-
-## Huggingface:
-https://huggingface.co/CoreyHuangH/ResNet50-5Class`
