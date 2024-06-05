@@ -14,7 +14,7 @@ model.fc = nn.Sequential(
 )
 
 model.load_state_dict(
-    torch.load("model/final_model.pth", map_location=torch.device("cpu"))
+    torch.load("model/final_model_state_dict.pth", map_location=torch.device("cpu"))
 )
 model.eval()
 

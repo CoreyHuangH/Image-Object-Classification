@@ -91,7 +91,7 @@ def train_and_validate(
         writer.add_scalar("Validation recall", val_recall, epoch)
         writer.add_scalar("Validation F1-score", val_f1, epoch)
 
-    torch.save(model.state_dict(), "model/final_model.pth")
+    torch.save(model.state_dict(), "model/final_model_state_dict.pth")
     print("Final model saved")
 
     print("Training and validation completed successfully")
