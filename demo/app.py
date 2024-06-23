@@ -37,8 +37,14 @@ interface = gr.Interface(
     fn=predict,
     inputs=gr.Image(type="pil"),
     outputs=gr.Label(num_top_classes=5),
-    examples=[["demo/input_imgs/cat.jpeg"], ["demo/input_imgs/dog.jpeg"]],
-    title="Animal Classifier",
+    examples=[
+        ["demo/input_imgs/bird.jpeg"],
+        ["demo/input_imgs/cat.jpeg"],
+        ["demo/input_imgs/dog.jpeg"],
+        ["demo/input_imgs/horse.jpeg"],
+        ["demo/input_imgs/sheep.jpeg"],
+    ],
+    title="Image Object Classifier",
     description="This is a demo of a resnet50 model trained on COCO dataset, which can classify 5 classes: bird, cat, dog, horse, sheep.",
 )
 
