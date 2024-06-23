@@ -33,7 +33,7 @@ def predict(inp):
 
 
 # Define the gradio interface
-demo = gr.Interface(
+interface = gr.Interface(
     fn=predict,
     inputs=gr.Image(type="pil"),
     outputs=gr.Label(num_top_classes=5),
@@ -42,4 +42,5 @@ demo = gr.Interface(
     description="This is a demo of a resnet50 model trained on COCO dataset, which can classify 5 classes: bird, cat, dog, horse, sheep.",
 )
 
-demo.launch()
+if __name__ == "__main__":
+    interface.launch()
