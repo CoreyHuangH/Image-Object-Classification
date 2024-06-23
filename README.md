@@ -1,7 +1,12 @@
 # Image-Object-Classification
 My Intern Project 1 @USTC: Image object classification
 
-## Requirement:
+## Get the demo from Huggingface Space:
+```
+git clone https://huggingface.co/spaces/CoreyHuangH/ResNet50-5-Class
+```
+
+## Instruction:
 **Dataset**
 - COCO [https://cocodataset.org/#explore], the images are labeled. Prepare a dataset by picking 5
 kinds of images (bird, cat, dog, horse and sheep were chosen in this project), and each kind contains a few hundred images. Split the dataset into 3 batches:
