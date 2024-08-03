@@ -1,5 +1,6 @@
 import torch
 from sklearn.metrics import precision_recall_fscore_support
+from torchvision.models import resnet50
 
 
 def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
@@ -13,7 +14,9 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
         device: The device to run the model on
         writer: The SummaryWriter to log the test results
     """
-
+    model = resnet50().to(device)
+    model.load_state_dict(torch.load("model/final_model_state_dict.pth"))
+    
     total_test_step = 0
 
     for epoch in range(epochs):
