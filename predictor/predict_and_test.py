@@ -15,8 +15,11 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
         writer: The SummaryWriter to log the test results
     """
     model = resnet50().to(device)
-    model.load_state_dict(torch.load("model/final_model_state_dict.pth"))
-    
+    model.load_state_dict(
+        torch.load("model/final_model_state_dict.pth"),
+        map_location=("cuda:0" if torch.cuda.is_available() else "cpu"),
+    )
+
     total_test_step = 0
 
     for epoch in range(epochs):
