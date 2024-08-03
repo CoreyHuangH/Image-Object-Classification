@@ -29,6 +29,10 @@ def train_and_validate(
 
     total_train_step = 0
 
+    if torch.cuda.device_count() > 1:
+        print(f"Using {torch.cuda.device_count()} GPUs")
+        model = torch.nn.DataParallel(model)
+
     for epoch in range(epochs):
         print(f"-----------Epoch {epoch + 1}-----------")
         model.train()
