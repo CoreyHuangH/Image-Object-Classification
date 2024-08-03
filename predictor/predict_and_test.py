@@ -1,4 +1,5 @@
 import torch
+from torch import nn
 from sklearn.metrics import precision_recall_fscore_support
 from torchvision.models import resnet50
 
@@ -15,6 +16,13 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
         writer: The SummaryWriter to log the test results
     """
     model = resnet50().to(device)
+    num_ftrs = model.fc.in_features
+    model.fc = nn.Sequential(
+        # Add dropout layer with 50% probability
+        nn.Dropout(0.5),
+        # Add a linear layer in order to deal with 5 classes
+        nn.Linear(num_ftrs, 5),
+    )
     model.load_state_dict(
         torch.load(
             "model/final_model_state_dict.pth",
