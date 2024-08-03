@@ -26,7 +26,7 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
     model.load_state_dict(
         torch.load(
             "model/final_model_state_dict.pth",
-            map_location=torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
+            map_location=device,
         )
     )
 
