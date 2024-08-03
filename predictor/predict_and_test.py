@@ -15,7 +15,7 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
         device: The device to run the model on
         writer: The SummaryWriter to log the test results
     """
-    model = resnet50().to(device)
+    model = resnet50()
     num_ftrs = model.fc.in_features
     model.fc = nn.Sequential(
         # Add dropout layer with 50% probability
@@ -28,6 +28,7 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
             "model/final_model_state_dict.pth",
         )
     )
+    model.to(device)
 
     total_test_step = 0
 
