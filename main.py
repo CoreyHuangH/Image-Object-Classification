@@ -61,12 +61,7 @@ def main():
     )
 
     # Initialize the device
-    if torch.cuda.is_available():
-        device = torch.device("cuda:0")
-    elif torch.backends.mps.is_available():
-        device = torch.device("mps")
-    else:
-        device = torch.device("cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Load the model and modify the last layer
     model = resnet50(weights="DEFAULT")
