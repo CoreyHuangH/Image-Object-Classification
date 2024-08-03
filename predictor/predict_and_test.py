@@ -16,8 +16,10 @@ def predict_and_test(model, test_loader, loss_fn, epochs, device, writer):
     """
     model = resnet50().to(device)
     model.load_state_dict(
-        torch.load("model/final_model_state_dict.pth"),
-        map_location=torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
+        torch.load(
+            "model/final_model_state_dict.pth",
+            map_location=torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
+        )
     )
 
     total_test_step = 0
