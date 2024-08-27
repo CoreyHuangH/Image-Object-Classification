@@ -5,10 +5,10 @@ import random
 from pycocotools.coco import COCO
 
 # Specify the root directory of the COCO dataset
-dataDir = "./COCO_data"
+dataDir = "./COCO_data" # Modify this path to the location of the COCO dataset
 
 # Initialize COCO API for instance annotations
-annFile = os.path.join(dataDir, "annotations/instances_train2014.json")
+annFile = os.path.join(dataDir, "annotations/instances_train2014.json") # Modify this path to the location of the annotations
 coco = COCO(annFile)
 
 # Specify the new category IDs to extract
@@ -49,7 +49,7 @@ for imgId in imgIds:
     for catId, catName in zip(catIds, catNames):
         if catId in present_catIds:
             imgPath = os.path.join(
-                dataDir, "train2014", coco.loadImgs(imgId)[0]["file_name"]
+                dataDir, "train2014", coco.loadImgs(imgId)[0]["file_name"] # Modify this path to the location of the images
             )
             imgPaths_by_category[catName].append(imgPath)
             selected_imgIds_by_category[catName].append(imgId)
